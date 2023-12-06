@@ -1,0 +1,13 @@
+:root {
+	--main: #E2992D;
+	--main-variant: #FFB74C;
+	--main-variant-selected: #B28035;
+	--secondary: #000;
+	--contrast: #fff;
+	--main-background-image: url('./background.jpg');
+	--main-logo: url('./logo.png');
+	--background-product-color: #F0F0F0;
+	--not-found: #D11141;
+	--font-color: #495057;
+	--whatsapp-color: #25D366;
+}

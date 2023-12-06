@@ -1,0 +1,9 @@
+:root {
+	--main: #7373C0;
+	--main-variant: #7373C0;
+	--secondary: #fff;
+	--contrast: #fff;
+	--main-background-image: url('./chinis.jpg');
+	--main-logo: url('./logo.svg');
+	--background-product-color: #F0F0F0;
+}

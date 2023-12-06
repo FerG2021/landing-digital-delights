@@ -1,0 +1,15 @@
+{
+	"hello": "Hola",
+	"developBy": "Desarrollado por",
+	"FSsolutions": "FSsolutions",
+	"bunker": {
+		"greeting": "Descubrí una experiencia de sabor única",
+		"login-button-label": "INGRESAR"
+	},
+	"chinis": {
+		"greeting": "Descubrí una experiencia de sabor única",
+		"login-button-label": "INGRESAR"
+	},
+	"notFoundProducts": "No se encontraron productos",
+	"notAvailableProduct": "Producto momentáneamente no disponible"
+}
