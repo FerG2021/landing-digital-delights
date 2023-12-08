@@ -111,6 +111,7 @@ export default {
 				}
 				.img {
 					height: 70px;
+					opacity: .2;
 				}
 			}
 			.img {

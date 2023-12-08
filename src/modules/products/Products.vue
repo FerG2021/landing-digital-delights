@@ -35,7 +35,7 @@
 				
 			</div>
 			<div class="list-products-container">
-				<div class="promotions">
+				<div class="promotions" v-if="availabledPromotions > 0">
 					<div v-for="promotion of availabledPromotions" :key="promotion">
 						<Promotions 
 							:promotion="promotion"
@@ -151,6 +151,7 @@ export default {
 	height: 100vh;
 	.header {
 		height: 20%;
+		min-height: 150px;
 		border-radius: 40%;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
@@ -182,6 +183,7 @@ export default {
 				}
 				.img {
 					height: 50px;
+					opacity: .2;
 				}
 			}
 		}
@@ -197,6 +199,7 @@ export default {
 			display: flex;
 			overflow-x: auto;
 			height: 20%;
+			min-height: 140px;
 			.item-category {
 				margin: 20px;
 			}
