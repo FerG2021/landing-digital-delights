@@ -35,7 +35,7 @@
 				
 			</div>
 			<div class="list-products-container">
-				<div class="promotions" v-if="availabledPromotions > 0">
+				<div class="promotions" v-if="availabledPromotions.length > 0">
 					<div v-for="promotion of availabledPromotions" :key="promotion">
 						<Promotions 
 							:promotion="promotion"

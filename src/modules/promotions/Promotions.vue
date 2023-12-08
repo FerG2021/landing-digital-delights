@@ -53,6 +53,7 @@ export default {
 		.title {
 			font-size: 20px;
 			font-weight: bold;
+			text-align: center;
 		}
 		.price {
 			font-size: 20px;

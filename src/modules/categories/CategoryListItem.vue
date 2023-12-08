@@ -27,7 +27,6 @@ export default {
 
 <style lang="scss" scoped>
 .category-container {
-	// border: 1px solid red;
 	height: 110px;
 	width: 80px;
 	.img-container {
