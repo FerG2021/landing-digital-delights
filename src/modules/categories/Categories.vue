@@ -13,7 +13,7 @@
 					class="img"
 					@click="clickImgLogo()"
 				>
-				<div class="back">
+				<div class="fssolutions-logo">
 					<img 
 						src="../../assets/fssolutions.png" 
 						class="img"
@@ -22,9 +22,10 @@
 				</div>
 			</div>
 			<div class="searcher">
-				<SearcherInput @changeSearcherInput="changeSearcherInput"/>
+				<SearcherInput @changeSearcherInput="changeSearcherInput" class="searcher-input"/>
 			</div>
 		</div>
+		
 		<div class="categories-container">
 			<div v-for="category in filteredCategories" :key="category">
 				<CategoryItem 
@@ -48,7 +49,7 @@ import CategoryItem from './CategoryItem.vue';
 
 export default {
 	name: 'CategoriesComponent',
-	components: { SearcherInput, CategoryItem },
+	components: { CategoryItem, SearcherInput },
 	computed: {
 		...mapGetters('UsersStore', ['account']),
 		...mapGetters('CategoriesStore', ['categories', 'filteredCategories', 'selectedCategory']),
@@ -88,53 +89,141 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-	height: 100vh;
-	background-color: var(--main);
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--main-background-image);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: flex;
-	flex-direction: column;
-	.logo-searcher-container {
-		.logo {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			.back {
-				width: 20%;
-				.back-icon {
-					color: var(--contrast);
-					font-size: 30px;
-					padding: 20px;
+/*  */
+/* MOBILE */
+/*  */
+@media all and (max-width: 960px) {
+	.container {
+		height: 100vh;
+		background-color: var(--main);
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--main-background-image);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		display: flex;
+		flex-direction: column;
+		.logo-searcher-container {
+			.logo {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.back {
+					height: 70px;
+					width: 70px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.back-icon {
+						color: var(--contrast);
+						font-size: 30px;
+					}
+					.img {
+						height: 70px;
+						opacity: .2;
+					}
 				}
 				.img {
-					height: 70px;
-					opacity: .2;
+					height: 100px;
+					padding: 10px;
+				}
+				.fssolutions-logo {
+					.img {
+						height: 70px;
+						opacity: .2;
+					}
 				}
 			}
-			.img {
-				height: 100px;
-				padding: 10px;
+			.searcher {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 		}
-		.searcher {
+		.categories-container {
+			height: 100%;
 			display: flex;
-			flex-direction: column;
+			overflow-y: auto;
+			flex-wrap: wrap;
+			justify-content: center;
 			align-items: center;
+			.category {
+				margin: 20px;
+			}
 		}
 	}
-	.categories-container {
-		height: 100%;
+}
+
+/*  */
+/* WEB */
+/*  */
+@media all and (min-width: 961px) {
+	.container {
+		height: 100vh;
+		background-color: var(--main);
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--main-background-image);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		display: flex;
-		overflow-y: auto;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		// align-items: flex-start;
-		.category {
-			margin: 20px;
+		flex-direction: column;
+		.logo-searcher-container {
+			.logo {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.back {
+					display: flex;
+					.back-icon {
+						color: var(--contrast);
+						font-size: 30px;
+						padding: 20px;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+					.img {
+						height: 70px;
+						opacity: .2;
+					}
+				}
+				.img {
+					height: 100px;
+					padding: 10px;
+					height: 120px;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+				.fssolutions-logo {
+					padding: 5px;
+					.img {
+						height: 70px;
+						opacity: .2;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+				}
+			}
+			.searcher {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.searcher-input {
+					width: 30%;
+				}
+			}
+		}
+		.categories-container {
+			height: 100%;
+			display: flex;
+			overflow-y: auto;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			.category {
+				margin: 20px;
+			}
 		}
 	}
 }

@@ -20,9 +20,13 @@
 				</div>
 			</div>
 			<div class="searcher">
-				<SearcherInput @changeSearcherInput="changeSearcherInput"/>
+				<SearcherInput 
+					@changeSearcherInput="changeSearcherInput"
+					class="searcher-input"
+				/>
 			</div>
 		</div>
+
 		<div class="content-container">
 			<div class="list-categories-container">
 				<div 
@@ -147,98 +151,215 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.products-container {
-	height: 100vh;
-	.header {
-		height: 20%;
-		min-height: 150px;
-		border-radius: 40%;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		background-color: var(--main);
-		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--main-background-image);
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		.title {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			text-align: center;
-			color: var(--contrast);
-			font-size: 30px;
-			font-weight: bold;
-			.back {
-				width: 20%;
-				display: flex;
-				align-items: center;
-				flex-direction: column;
-				.back-icon {
-					color: var(--contrast);
-					font-size: 30px;
-					padding: 20px;
-				}
-				.img {
-					height: 50px;
-					opacity: .2;
-				}
-			}
-		}
-		.searcher {
+/*  */
+/* MOBILE */
+/*  */
+@media all and (max-width: 960px) {
+	.products-container {
+		height: 100vh;
+		.header {
+			height: 20%;
+			min-height: 150px;
+			border-radius: 40%;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			background-color: var(--main);
+			background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--main-background-image);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
 			display: flex;
 			flex-direction: column;
-			align-items: center;
-		}
-	}
-	.content-container {
-		height: 80%;
-		.list-categories-container {
-			display: flex;
-			overflow-x: auto;
-			height: 20%;
-			min-height: 140px;
-			.item-category {
-				margin: 20px;
-			}
-		}
-		.list-products-container {
-			height: 80%;
-			padding: 10px 20px 10px 20px;
-			overflow-y: auto;
-			.promotions {
+			justify-content: space-around;
+			.title {
 				display: flex;
-				overflow-x: auto;
-				width: 100%;
-				height: 130px;
-			}
-			.products {
-				margin-top: 10px;
-				padding-bottom: 20px;
-				.category-title {
-					color: black;
-					font-size: 25px;
-				}
-				.items-category {
+				align-items: center;
+				justify-content: space-between;
+				text-align: center;
+				color: var(--contrast);
+				font-size: 30px;
+				font-weight: bold;
+				.back {
+					width: 20%;
 					display: flex;
-					flex-wrap: wrap;
-					justify-content: center;
-					height: 80%;
-					.items {
-						margin: 20px;
+					align-items: center;
+					flex-direction: column;
+					.back-icon {
+						color: var(--contrast);
+						font-size: 30px;
+						padding: 20px;
+					}
+					.img {
+						height: 50px;
+						opacity: .2;
 					}
 				}
-				.not-found-container {
+			}
+			.searcher {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+		.content-container {
+			height: 80%;
+			.list-categories-container {
+				display: flex;
+				overflow-x: auto;
+				height: 20%;
+				min-height: 140px;
+				.item-category {
+					margin: 20px;
+				}
+			}
+			.list-products-container {
+				height: 80%;
+				padding: 10px 20px 10px 20px;
+				overflow-y: auto;
+				.promotions {
 					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
+					overflow-x: auto;
+					width: 100%;
+					height: 130px;
+				}
+				.products {
+					margin-top: 10px;
+					padding-bottom: 20px;
+					.category-title {
+						color: black;
+						font-size: 25px;
+					}
+					.items-category {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: center;
+						height: 80%;
+						.items {
+							margin: 20px;
+						}
+					}
+					.not-found-container {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+					}
 				}
 			}
 		}
 	}
 }
+
+/*  */
+/* WEB */
+/*  */
+@media all and (min-width: 961px) {
+	.products-container {
+		height: 100vh;
+		.header {
+			height: 20%;
+			min-height: 150px;
+			border-radius: 40%;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			background-color: var(--main);
+			background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--main-background-image);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			.title {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				text-align: center;
+				color: var(--contrast);
+				font-size: 30px;
+				font-weight: bold;
+				.back {
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					.back-icon {
+						color: var(--contrast);
+						font-size: 30px;
+						padding: 20px;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+					.img {
+						height: 50px;
+						opacity: .2;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+				}
+			}
+			.searcher {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.searcher-input {
+					width: 40%;
+				}
+			}
+		}
+		.content-container {
+			height: 80%;
+			.list-categories-container {
+				display: flex;
+				justify-content: center;
+				overflow-x: auto;
+				height: 20%;
+				min-height: 140px;
+				.item-category {
+					margin: 20px;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+			.list-products-container {
+				height: 80%;
+				padding: 10px 20px 10px 20px;
+				overflow-y: auto;
+				.promotions {
+					display: flex;
+					overflow-x: auto;
+					width: 100%;
+					height: 130px;
+				}
+				.products {
+					margin-top: 10px;
+					padding-bottom: 20px;
+					.category-title {
+						color: black;
+						font-size: 25px;
+					}
+					.items-category {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: center;
+						height: 80%;
+						.items {
+							margin: 20px;
+						}
+					}
+					.not-found-container {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 </style>

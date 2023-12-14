@@ -1,7 +1,12 @@
 <template>
-	<div :style="dynamicStyles" class="category-container">
+	<div class="category-container">
+		<div class="image">
+			<img :src="category.image" class="img">
+		</div>
 		<div class="title">
-			{{ category.name }}
+			<div>
+				{{ category.name }}
+			</div>
 		</div>
 	</div>
 </template>
@@ -18,10 +23,8 @@ export default {
 		dynamicStyles() {
 			return {
 				backgroundColor: 'var(--contrast)',
-				// backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${this.category.image})`,
 				backgroundImage: `url(${this.category.image})`,
 				backgroundSize: 'cover',
-				// backgroundSize: 'contain',
 				backgroundPosition: 'center',
 				backgroundRepeat: 'no-repeat',
 				color: 'var(--main)'
@@ -33,8 +36,8 @@ export default {
 
 <style lang="scss" scoped>
 .category-container {
-	height: 130px;
-	width: 130px;
+	height: 140px;
+	width: 140px;
 	border-radius: 20px;
 	background-color: var(--contrast);
 	position: relative;
@@ -43,11 +46,23 @@ export default {
 	align-items: center;
 	justify-content: center;
 	&:hover {
+		background-color: #e5e5e5;
 		cursor: pointer;
 	}
+	.image {
+		height: 110px;
+		.img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 	.title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
-		background-color: var(--main);
+		// background-color: var(--main);
 		color: var(--secondary);
 		text-align: center;
 	}

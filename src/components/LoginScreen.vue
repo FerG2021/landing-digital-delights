@@ -15,12 +15,6 @@
 			<div class="develop-by">
 				{{ $t('developBy') }}
 			</div>
-			<!-- <span 
-				class="fs-solutions"
-				@click="clickFSsolutions()"
-			>
-				{{ $t('FSsolutions') }}
-			</span> -->
 			<img 
 				src="../assets/fssolutions.png" 
 				class="img"
@@ -130,13 +124,21 @@ export default {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
+			justify-content: space-around;
 			.login-button {
 				font-weight: bold;
 			}
 			.greeting {
 				margin-top: 20px;
 				color: var(--contrast);
+			}
+		}
+		.develop-by-container {
+			text-align: center;
+			font-size: 12px;
+			color: var(--contrast);
+			.img {
+				height: 70px;
 			}
 		}
 	}
