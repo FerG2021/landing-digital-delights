@@ -29,6 +29,7 @@ export default {
 <style lang="scss" scoped>
 .searcher {
 	border-radius: 40px;
+	width: 100%;
 }
 
 </style>

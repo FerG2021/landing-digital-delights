@@ -44,6 +44,9 @@ export default {
 	display: flex;
 	max-width: 300px;
 	margin: 0px 10px 0px 10px;
+	&:hover {
+		cursor: pointer;
+	}
 	.information {
 		width: 65%;
 		display: flex;

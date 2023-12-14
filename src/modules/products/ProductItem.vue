@@ -1,5 +1,5 @@
 <template>
-	<div class="cotainer">
+	<div class="container">
 		<div class="img-container">
 			<img :src="product.image" :class="product.stock === 0 ? 'not-available-product' : ''">
 		</div>
@@ -32,11 +32,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.cotainer {
+	.container {
 		height: 180px;
 		width: 120px;
 		background-color: var(--background-product-color);
 		border-radius: 20px;
+		&:hover {
+			cursor: pointer;
+			background-color: #e5e5e5;
+		}
 		.img-container {
 			height: 100px;
 			display: flex;

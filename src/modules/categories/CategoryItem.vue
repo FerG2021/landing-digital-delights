@@ -46,6 +46,7 @@ export default {
 	align-items: center;
 	justify-content: center;
 	&:hover {
+		background-color: #e5e5e5;
 		cursor: pointer;
 	}
 	.image {
