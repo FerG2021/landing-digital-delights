@@ -57,19 +57,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-	width: 50%;
-	.button {
-		width: 100%;
-		background-color: transparent;
-		color: var(--main); 
-		border: 1px solid var(--main);
-		border-radius: 20px;
-	}
-	.input-number {
-		width: 100%;
+/*  */
+/* MOBILE */
+/*  */
+@media all and (max-width: 960px) {
+	.container {
+		width: 50%;
+		.button {
+			width: 100%;
+			background-color: transparent;
+			color: var(--main); 
+			border: 1px solid var(--main);
+			border-radius: 20px;
+		}
+		.input-number {
+			width: 100%;
+		}
 	}
 }
+
+/*  */
+/* WEB */
+/*  */
+@media all and (min-width: 961px) {
+	.container {
+		width: 50%;
+		.button {
+			width: 100%;
+			background-color: transparent;
+			color: var(--main); 
+			border: 1px solid var(--main);
+			border-radius: 20px;
+			&:hover {
+				background-color: var(--main);
+				color: var(--contrast);
+			}
+		}
+		.input-number {
+			width: 100%;
+		}
+	}
+}
+
 
 
 </style>

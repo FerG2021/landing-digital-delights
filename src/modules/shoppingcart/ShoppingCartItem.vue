@@ -18,6 +18,7 @@
 			<div class="buttons">
 				<IncrementDecrementButton
 					:product="product"
+					class="increment-decrement-button"
 				/>
 			</div>
 		</div>
@@ -45,29 +46,80 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.shopping-cart-item-container {
-	height: 100px;
-	margin: 10px 0 10px 0;
-	display: flex;
-	background-color: var(--background-product-color);
-	border-radius: 8px;
-	.img {
+/*  */
+/* MOBILE */
+/*  */
+@media all and (max-width: 960px) {
+	.shopping-cart-item-container {
 		height: 100px;
-	}
-	.information {
-		height: 100px;
-		width: 100%;
+		margin: 10px 0 10px 0;
 		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		text-align: center;
-		.name {
-			font-weight: bold;
+		background-color: var(--background-product-color);
+		border-radius: 8px;
+		.img {
+			height: 100px;
 		}
-		.price {
-			color: var(--main);
-			font-weight: 600;
+		.information {
+			height: 100px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			text-align: center;
+			.name {
+				font-weight: bold;
+			}
+			.price {
+				color: var(--main);
+				font-weight: 600;
+			}
 		}
 	}
 }
+
+/*  */
+/* WEB */
+/*  */
+@media all and (min-width: 961px) {
+	.shopping-cart-item-container {
+		height: 100px;
+		margin: 10px 0 10px 0;
+		display: flex;
+		background-color: var(--background-product-color);
+		border-radius: 8px;
+		.img {
+			height: 100px;
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.information {
+			height: 100px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			text-align: center;
+			.name {
+				font-weight: bold;
+			}
+			.price {
+				color: var(--main);
+				font-weight: 600;
+			}
+			.buttons {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+				.increment-decrement-button {
+					width: 60%;
+				}
+			}
+		}
+	}
+}
+
 </style>

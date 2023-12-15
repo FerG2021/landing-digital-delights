@@ -80,35 +80,90 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	.button {
-		width: 20%;
-		height: 36px;
-		border-radius: 0px;
-	}
-	.decrement-button {
-		border-top-left-radius: 20px;
-		border-bottom-left-radius: 20px;
-	}
-	.increment-button {
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-	}
-	.delete {
-		margin-left: 5px;
-		height: 36px;
-		border-radius: 20px;
-	}
-	.input-html-number {
-		width: 20%;
-		height: 36px;
-		text-align: center;
-		font-size: 18px;
-		border-radius: 0px;
-		border: 1px solid #2f2f2f;
+/*  */
+/* MOBILE */
+/*  */
+@media all and (max-width: 960px) {
+	.container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		.button {
+			width: 20%;
+			height: 36px;
+			border-radius: 0px;
+		}
+		.decrement-button {
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+		.increment-button {
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+		.delete {
+			margin-left: 5px;
+			height: 36px;
+			border-radius: 20px;
+		}
+		.input-html-number {
+			width: 20%;
+			height: 36px;
+			text-align: center;
+			font-size: 18px;
+			border-radius: 0px;
+			border: 1px solid #2f2f2f;
+		}
 	}
 }
+
+/*  */
+/* WEB */
+/*  */
+@media all and (min-width: 961px) {
+	.container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		.button {
+			width: 20%;
+			height: 36px;
+			border-radius: 0px;
+		}
+		.decrement-button {
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+			&:hover {
+				background-color: var(--not-found);
+				color: var(--contrast);
+			}
+		}
+		.increment-button {
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+			&:hover {
+				background-color: var(--success);
+				color: var(--contrast);
+			}
+		}
+		.delete {
+			margin-left: 5px;
+			height: 36px;
+			border-radius: 20px;
+			&:hover {
+				background-color: var(--not-found);
+				color: var(--contrast);
+			}
+		}
+		.input-html-number {
+			width: 20%;
+			height: 36px;
+			text-align: center;
+			font-size: 18px;
+			border-radius: 0px;
+			border: 1px solid #2f2f2f;
+		}
+	}
+}
+
 </style>

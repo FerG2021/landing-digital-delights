@@ -114,7 +114,7 @@ export default {
 			return availabledPromotions;
 		},
 		shoppingCartCant() {
-			return this.list.length;
+			return this.list.length > 0 ? this.list.length : '';
 		}
 	},
 	data() {
@@ -293,7 +293,7 @@ export default {
 					.back-icon {
 						color: var(--contrast);
 						font-size: 30px;
-						padding: 20px;
+						margin: 20px;
 						&:hover {
 							cursor: pointer;
 						}
@@ -337,6 +337,8 @@ export default {
 				overflow-y: auto;
 				.promotions {
 					display: flex;
+					align-items: center;
+					justify-content: center;
 					overflow-x: auto;
 					width: 100%;
 					height: 130px;

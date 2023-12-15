@@ -66,7 +66,7 @@ export default {
 			return accountLogoMap[this.account];
 		},
 		shoppingCartCant() {
-			return this.list.length;
+			return this.list.length > 0 ? this.list.length : '';
 		}
 	},
 	methods: {
@@ -187,7 +187,7 @@ export default {
 					.back-icon {
 						color: var(--contrast);
 						font-size: 30px;
-						padding: 20px;
+						margin: 20px;
 						&:hover {
 							cursor: pointer;
 						}
