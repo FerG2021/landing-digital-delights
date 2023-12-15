@@ -16,9 +16,15 @@
 		</div>
 		<div class="contact">
 			<WhatsAppButton 
-				class="button-contact"
-				@click="goToWhatsApp()"
 				v-if="productSelected.stock === 1 || productSelected.available === 1"
+				class="contact-button"
+				:label="$t('consult')"
+				@click="goToWhatsApp()"
+			/>
+			<AddProduct 
+				v-if="productSelected.stock === 1 || productSelected.available === 1"
+				:product="productSelected"
+				class="add-button"
 			/>
 			<div v-else class="not-available-product">
 				<div class="legend">
@@ -32,9 +38,10 @@
 <script>
 import { formatNumberToDecimal } from '../utils/utils';
 import WhatsAppButton from './WhatsAppButton.vue';
+import AddProduct from './AddProductButton.vue';
 
 export default {
-	components: { WhatsAppButton },
+	components: { AddProduct, WhatsAppButton },
 	props: {
 		productSelected: {
 			type: Object,
@@ -105,9 +112,12 @@ export default {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		.button-contact {
-			width: 50%;
-			border-radius: 8px;
+		.contact-button {
+			width: 70%;
+			margin-bottom: 10px;
+		}
+		.add-button {
+			width: 70%;
 		}
 		.not-available-product {
 			color: var(--not-found);

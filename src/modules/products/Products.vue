@@ -12,11 +12,12 @@
 					Menú
 				</div>
 				<div class="back">
-					<img 
-						src="../../assets/fssolutions.png" 
-						class="img"
-						@click="clickFSsolutions()"
-					>
+					<i	
+						v-badge.warning="shoppingCartCant" 
+						class="pi pi-shopping-cart p-overlay-badge back-icon shopping-cart" 
+						style="font-size: 2rem"
+						@click="clickShoppingCart()"
+					/>
 				</div>
 			</div>
 			<div class="searcher">
@@ -100,6 +101,7 @@ export default {
 		...mapGetters('CategoriesStore', ['selectedCategory', 'categories']),
 		...mapGetters('ProductsStore', ['productsByCategory', 'productsFiltered']),
 		...mapGetters('PromotionsStore', ['promotions']),
+		...mapGetters('ShoppingCartStore', ['list']),
 		availabledPromotions() {
 			const availabledPromotions = [];
 
@@ -110,6 +112,9 @@ export default {
 			}
 
 			return availabledPromotions;
+		},
+		shoppingCartCant() {
+			return this.list.length;
 		}
 	},
 	data() {
@@ -145,6 +150,9 @@ export default {
 		},
 		clickFSsolutions() {
 			window.open('http://fssolutions.com.ar/', '_blank');
+		},
+		clickShoppingCart() {
+			this.$router.push('/shopping-cart');
 		}
 	},
 };
@@ -180,17 +188,17 @@ export default {
 				font-size: 30px;
 				font-weight: bold;
 				.back {
-					width: 20%;
+					height: 70px;
+					width: 70px;
 					display: flex;
 					align-items: center;
-					flex-direction: column;
+					justify-content: center;
 					.back-icon {
 						color: var(--contrast);
 						font-size: 30px;
-						padding: 20px;
 					}
 					.img {
-						height: 50px;
+						height: 70px;
 						opacity: .2;
 					}
 				}

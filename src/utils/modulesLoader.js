@@ -29,6 +29,13 @@ export default function loadModulesByAccount(store, router, account) {
 				componentName: 'Promotions',
 				title: 'Promociones',
 				store: true
+			},
+			{
+				name: 'shoppingcart',
+				componentName: 'ShoppingCart',
+				title: 'Mi carrito',
+				path: '/shopping-cart',
+				store: true
 			}
 		]
 	};

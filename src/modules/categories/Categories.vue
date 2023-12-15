@@ -13,16 +13,20 @@
 					class="img"
 					@click="clickImgLogo()"
 				>
-				<div class="fssolutions-logo">
-					<img 
-						src="../../assets/fssolutions.png" 
-						class="img"
-						@click="clickFSsolutions()"
-					>
+				<div class="back">
+					<i 
+						v-badge.warning="shoppingCartCant" 
+						class="pi pi-shopping-cart p-overlay-badge back-icon shopping-cart" 
+						style="font-size: 2rem"
+						@click="clickShoppingCart()"
+					/>
 				</div>
 			</div>
 			<div class="searcher">
-				<SearcherInput @changeSearcherInput="changeSearcherInput" class="searcher-input"/>
+				<SearcherInput 
+					@changeSearcherInput="changeSearcherInput" 
+					class="searcher-input"
+				/>
 			</div>
 		</div>
 		
@@ -53,12 +57,16 @@ export default {
 	computed: {
 		...mapGetters('UsersStore', ['account']),
 		...mapGetters('CategoriesStore', ['categories', 'filteredCategories', 'selectedCategory']),
+		...mapGetters('ShoppingCartStore', ['list']),
 		imgSource() {
 			const accountLogoMap = {
 				bunker: bunkerLogo,
 				chinis: chinisLogo,
 			};
 			return accountLogoMap[this.account];
+		},
+		shoppingCartCant() {
+			return this.list.length;
 		}
 	},
 	methods: {
@@ -83,6 +91,9 @@ export default {
 		},
 		clickFSsolutions() {
 			window.open('http://fssolutions.com.ar/', '_blank');
+		},
+		clickShoppingCart() {
+			this.$router.push('/shopping-cart');
 		}
 	},
 };

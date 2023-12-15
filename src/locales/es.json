@@ -11,5 +11,10 @@
 		"login-button-label": "INGRESAR"
 	},
 	"notFoundProducts": "No se encontraron productos",
-	"notAvailableProduct": "Producto momentáneamente no disponible"
+	"notAvailableProduct": "Producto momentáneamente no disponible",
+	"detailsTitle": "Completá tus datos",
+	"consult": "Consultar",
+	"continue": "Continuar",
+	"send": "Enviar pedido",
+	"notFoundShoppingCart": "Aún no hay productos cargados al carrito"
 }

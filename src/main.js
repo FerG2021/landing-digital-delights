@@ -31,7 +31,14 @@ import Button from 'primevue/button';
 import ProgressSpinner from 'primevue/progressspinner';
 import InputText from 'primevue/inputtext';
 import Sidebar from 'primevue/sidebar';
-
+import Badge from 'primevue/badge';
+import BadgeDirective from 'primevue/badgedirective';
+import InputNumber from 'primevue/inputnumber';
+import Image from 'primevue/image';
+import Dropdown from 'primevue/dropdown';
+import Textarea from 'primevue/textarea';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
 
 createApp(App)
 	.use(i18n)
@@ -43,4 +50,12 @@ createApp(App)
 	.component('ProgressSpinner', ProgressSpinner)
 	.component('InputText', InputText)
 	.component('Sidebar', Sidebar)
+	.component('Badge', Badge)
+	.component('InputNumber', InputNumber)
+	.component('Image', Image)
+	.component('Dropdown', Dropdown)
+	.component('Textarea', Textarea)
+	.component('Toast', Toast)
+	.directive('badge', BadgeDirective)
+	.use(ToastService)
 	.mount('#app');
