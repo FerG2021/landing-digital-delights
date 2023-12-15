@@ -162,14 +162,14 @@ export default {
 		},
 		getData() {	
 			let message = '';
-			message = message + `Nombre: *${this.name}* \nMétodo de pago: *${this.paymentForm.label}* \nForma de envío: *${this.deliveryForm.label}* \n`;
+			message = message + `👤 Nombre: *${this.name}* \n💸 Método de pago: *${this.paymentForm.label}* \n🛵 Forma de envío: *${this.deliveryForm.label}* \n`;
 
 			if (this.deliveryForm.value === 'delivery') {
-				message = message + `Dirección: *${this.address}* \n`;
+				message = message + `🧭 Dirección: *${this.address}* \n`;
 			}
 
 			if (this.observations !== null && this.observations !== '') {
-				message = message + `Observaciones: *${this.observations}* \n`;
+				message = message + `🧐 Observaciones: *${this.observations}* \n`;
 			}
 
 			return message;
