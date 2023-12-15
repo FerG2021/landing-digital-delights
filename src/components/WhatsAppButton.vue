@@ -22,7 +22,7 @@ export default {
 	background-color: transparent;
 	color: var(--whatsapp-color);
 	border: 1px solid var(--whatsapp-color);
-	border-radius: 8px;
+	border-radius: 20px;
 }
 
 </style>

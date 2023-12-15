@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 	<Button 
-		class="button" 
+		class="button decrement-button" 
 		severity="danger"
 		icon="pi pi-minus" 
 		aria-label="Filter"
@@ -15,7 +15,7 @@
 		disabled
 	>
 	<Button 
-		class="button" 
+		class="button increment-button" 
 		severity="success" 
 		icon="pi pi-plus" 
 		aria-label="Filter"
@@ -86,9 +86,21 @@ export default {
 	justify-content: center;
 	.button {
 		width: 20%;
+		height: 36px;
+		border-radius: 0px;
+	}
+	.decrement-button {
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+	}
+	.increment-button {
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
 	}
 	.delete {
 		margin-left: 5px;
+		height: 36px;
+		border-radius: 20px;
 	}
 	.input-html-number {
 		width: 20%;

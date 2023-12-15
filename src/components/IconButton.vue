@@ -31,7 +31,7 @@ export default {
 	background-color: transparent;
 	color: var(--main);
 	border: 1px solid var(--main);
-	border-radius: 8px;
+	border-radius: 20px;
 }
 
 </style>

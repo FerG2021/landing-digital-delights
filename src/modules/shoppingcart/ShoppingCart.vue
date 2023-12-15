@@ -25,6 +25,7 @@
 
 		<div 
 			class="shopping-cart-not-found"
+			v-else
 		>
 			<NotFound 
 				:description="$t('notFoundShoppingCart')"
@@ -76,8 +77,6 @@ export default {
 		height: 80%;
 		padding: 20px;
 		display: flex;
-		.not-found {
-		}
 	}
 }
 
