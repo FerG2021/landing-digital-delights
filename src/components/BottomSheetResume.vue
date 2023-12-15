@@ -133,12 +133,13 @@ export default {
 			return formatNumberToDecimal(price, 0, 0);
 		},
 		async sendWhatsAppMessage() {
-			const message = `¡Hola Bunker! Quisiera hacerte el siguiente pedido: \n 
-			${this.getListProducts()} \n 
-			Por un total de $ ${this.total} \n
-			Estos son mis datos: \n
-			${this.getData()}
-			¡¡¡Saludos!!!`;
+			let message = '¡Hola Burguer Blist! Quisiera hacerte el siguiente pedido:\n';
+
+			message = message + `${this.getListProducts()} \n`;
+			message = message + `Por un total de $${this.formatPrice(this.total)} \n`;
+			message = message + '\nEstos son mis datos: \n';
+			message = message + `${this.getData()}`;
+			message = message + '\n¡¡¡Saludos!!!';
 
 			const url = encodeURI(
 				'https://wa.me/' + 5493843401553 + '?text=' + message
@@ -150,10 +151,24 @@ export default {
 			let listProducts = '';
 
 			for (const item of this.list) {
-				listProducts = listProducts + `\n ${item.name} - ${item.cant} x $ ${item.price}`;
+				listProducts = listProducts + `${item.name} - ${item.cant} x $${this.formatPrice(item.price)} = $${this.formatPrice(item.subtotal)} \n`;
 			}
 
 			return listProducts;
+		},
+		getData() {
+			let message = '';
+			message = message + `Nombre: ${this.name} \nMétodo de pago: ${this.paymentForm.label} \nForma de envío: ${this.deliveryForm.label} \n`;
+
+			if (this.deliveryForm.value === 'delivery') {
+				message = message + `Dirección: ${this.address} \n`;
+			}
+
+			if (this.observations !== null && this.observations !== '') {
+				message = message + `Observaciones: ${this.observations} \n`;
+			}
+
+			return message;
 		},
 		clickSend() {
 			if (this.getStatusFiels()) {
@@ -178,24 +193,6 @@ export default {
 				this.address = null;
 				return false;
 			}
-		},
-		getData() {
-			let message = '';
-			message = message + `
-				Nombre: ${this.name} \n
-				Método de pago: ${this.paymentForm.label} \n
-				Forma de envío: ${this.deliveryForm.label} \n
-			`;
-
-			if (this.deliveryForm.value === 'delivery') {
-				message = message + `Dirección: ${this.address} \n`;
-			}
-
-			if (this.observations !== null && this.observations !== '') {
-				message = message + `Observaciones: ${this.observations} \n`;
-			}
-
-			return message;
 		}
 	}
 };
